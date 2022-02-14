@@ -7,21 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-        <label>Hoogte:<input type="number" name="height">CM</input></label><br>
-        <label>Gewicht<input type="number" name="weight">KG</input></label><br>
-        <input type="submit" name="submit" value="Verstuur"></input><br>
-    </form>
-    <?php
-        if (isset($_POST["submit"])) {
-            // CM -> M
-            $height = $_POST["height"] / 100;
+<h1> BMI calc </h1>
+<?php
+$BMIWeight = 90;     //KG
+$BMIheight = 180;    //CM
 
-            // BMI berekening
-            $BMI = $_POST["weight"] / ($height * $height);
+$BMIheight = $BMIheight / 100;
+$BMI = $BMIWeight / ($BMIheight * $BMIheight);
 
-            echo $BMI;
-        }
-    ?>
+echo $BMI;
+?>
+
+<h1>Height calc </h1>
+<?php
+$Hweight = 90;   //kg
+$HBMI = 18;      //bmi
+
+
+?>
+
+<h1>Weight calc </h1>
+<?php
+$Wheight = 200;  //cm
+$WBMI = 35;      //bmi
+
+$wheightm = $Wheight / 100;
+$wWeight = $WBMI * ($wheightm * $wheightm);
+?>
+
 </body>
 </html>
